@@ -1,0 +1,105 @@
+/*define global variables for CSS*/
+:root {
+  --color-dark: rgba(130, 230, 0, 0.7);
+  --color-light: rgba(130, 230, 0, 0.8);
+
+  --color-form-light: rgba(255, 255, 255, 0.05);
+  --color-form-dark: rgba(255, 255, 255, 0.35);
+
+  --color-button-light: rgba(255, 255, 255, 0.1);
+  --color-button-dark: rgba(255, 255, 255, 0.25);
+
+  --color-text: black;
+}
+
+/*Reset all elements on the website */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  background: var(--color-light);
+  background: linear-gradient(
+    to top right,
+    var(--color-dark),
+    var(--color-light)
+  );
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  height: 100vh; /*100% height of the window*/
+  justify-content: center;
+  width: 100vw; /*100% width of the window*/
+}
+
+.Title-container {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+form {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  padding: 36px 30px;
+  text-align: center;
+}
+
+.form_input-container {
+  margin: 0;
+}
+
+.cutomerImputAndButton-container {
+  width: 50%;
+  margin: 0;
+}
+
+.addCustomerButton {
+  background: linear-gradient(
+    to left,
+    var(--color-button-light),
+    var(--color-button-dark)
+  );
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 18px;
+  color: var(--color-text);
+  padding: 12px 20px;
+}
+
+input,
+.addProjectButton {
+  background: linear-gradient(
+    to left,
+    var(--color-button-light),
+    var(--color-button-dark)
+  );
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
+  color: var(--color-text);
+  padding: 12px 24px;
+}
+
+.addProjectButton {
+  justify-content: center;
+  width: max-content;
+}
+
+label {
+  color: var(--color-text);
+}
