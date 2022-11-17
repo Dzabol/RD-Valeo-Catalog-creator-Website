@@ -37,6 +37,13 @@ body {
   width: 100vw; /*100% width of the window*/
 }
 
+.copyRight {
+  position: absolute;
+  top: 98%;
+  font-size: 5px;
+  color: rgba(130, 230, 0, 0.5);
+}
+
 img {
   width: 200px;
   display: block;
@@ -49,7 +56,6 @@ img {
   margin-bottom: 50px;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.4));
 }
-
 h1 {
   font-size: 30px;
   padding-bottom: 10px;
