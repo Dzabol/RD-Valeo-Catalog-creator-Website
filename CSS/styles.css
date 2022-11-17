@@ -41,13 +41,15 @@ img {
   width: 200px;
   display: block;
   margin: 0 auto 30px auto;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
 }
 
 /*Title*/
 .Title-container {
   margin-bottom: 50px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.4));
 }
+
 h1 {
   font-size: 30px;
   padding-bottom: 10px;
