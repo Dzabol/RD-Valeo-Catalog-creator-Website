@@ -25,7 +25,6 @@
 body {
   align-items: center;
   display: flex;
-  background: var(--color-light);
   background: linear-gradient(
     to top right,
     var(--color-dark),
@@ -42,7 +41,9 @@ img {
   width: 200px;
   display: block;
   margin: 0 auto 30px auto;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.4));
 }
+
 /*Title*/
 .Title-container {
   margin-bottom: 50px;
@@ -58,20 +59,23 @@ h2 {
 
 /*Entire Form*/
 form {
-  background: white;
+  background: rgb(250, 250, 250);
   border-radius: 15px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
   display: inline-block;
   padding: 36px 30px;
   text-align: center;
   justify-content: center;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .imputSection-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 /*All Input Labels*/
 label {
@@ -98,43 +102,70 @@ label {
 }
 
 .addCustomerButton {
-  background: linear-gradient(
-    to left,
-    var(--color-button-light),
-    var(--color-button-dark)
-  );
+  background: white;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 18px;
   color: var(--color-text);
   padding: 12px 2px 12px 2px;
   width: var(--addNewCustomerButton-width);
+  cursor: pointer;
+}
+
+.form_separator {
+  background: rgba(130, 230, 0, 0.7);
+  border-radius: 100%;
+  height: 2px;
+  margin: 0 auto 32px;
+  width: 80%;
 }
 
 /*Button to inicialize a macros*/
 .addProjectButton {
   align-items: center;
   width: max-content;
+  font-size: 20px;
+  font-weight: 60;
+  font-style: normal;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Add Fly effect on the button*/
+.addProjectButton::after {
+  display: block;
+  position: absolute;
+  background: rgba(130, 230, 0, 0.7);
+  height: 100px;
+  width: 100px;
+  content: "";
+  left: -120px;
+  top: -50%;
+  width: 50px;
+  transform: skewX(-30deg) translateX(100%);
+  transition-duration: 0.4s;
+}
+
+button:hover::after {
+  left: 110%;
 }
 
 input,
 .addProjectButton {
-  background: linear-gradient(
-    to left,
-    var(--color-button-light),
-    var(--color-button-dark)
-  );
+  background: white;
   border: none;
   border-radius: 18px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
   color: var(--color-text);
   padding: 12px 24px;
   width: var(--inputBox-width);
-  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s outline 0.3s;
 }
 
 label {
   color: var(--color-text);
+  cursor: text;
 }
 
 /*Button and label behavior when active*/
@@ -143,4 +174,11 @@ input:hover,
 .addProjectButton:hover,
 .addCustomerButton:hover {
   box-shadow: 0px 8px 12px 0;
+}
+
+/*Define outline when active*/
+input:focus,
+.addProjectButton:focus,
+.addCustomerButton:focus {
+  outline: solid 3px rgb(130, 230, 0);
 }
