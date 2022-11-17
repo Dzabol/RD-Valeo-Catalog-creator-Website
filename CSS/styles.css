@@ -10,6 +10,9 @@
   --color-button-dark: rgba(255, 255, 255, 0.25);
 
   --color-text: black;
+
+  --inputBox-width: 200px;
+  --addNewCustomerButton-width: 40px;
 }
 
 /*Reset all elements on the website */
@@ -35,10 +38,15 @@ body {
   width: 100vw; /*100% width of the window*/
 }
 
-.Title-container {
-  margin-bottom: 30px;
+img {
+  width: 200px;
+  display: block;
+  margin: 0 auto 30px auto;
 }
-
+/*Title*/
+.Title-container {
+  margin-bottom: 50px;
+}
 h1 {
   font-size: 30px;
   padding-bottom: 10px;
@@ -48,24 +56,45 @@ h2 {
   font-size: 25px;
 }
 
+/*Entire Form*/
 form {
   background: white;
   border-radius: 15px;
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  max-width: 450px;
+  display: inline-block;
   padding: 36px 30px;
   text-align: center;
+  justify-content: center;
 }
 
+.imputSection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+/*All Input Labels*/
+label {
+  color: var(--color-text);
+}
+
+/*All input containers*/
 .form_input-container {
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 
+/*Customer Section*/
 .cutomerImputAndButton-container {
-  width: 50%;
   margin: 0;
+  display: inline;
+}
+
+.customerInputAndButton-container {
+  display: inline;
+}
+
+.customerInput {
+  width: calc(var(--inputBox-width) - var(--addNewCustomerButton-width) - 5px);
 }
 
 .addCustomerButton {
@@ -78,7 +107,14 @@ form {
   border: none;
   border-radius: 18px;
   color: var(--color-text);
-  padding: 12px 20px;
+  padding: 12px 2px 12px 2px;
+  width: var(--addNewCustomerButton-width);
+}
+
+/*Button to inicialize a macros*/
+.addProjectButton {
+  align-items: center;
+  width: max-content;
 }
 
 input,
@@ -93,13 +129,18 @@ input,
   box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
   color: var(--color-text);
   padding: 12px 24px;
-}
-
-.addProjectButton {
-  justify-content: center;
-  width: max-content;
+  width: var(--inputBox-width);
+  transition: box-shadow 0.3s;
 }
 
 label {
   color: var(--color-text);
+}
+
+/*Button and label behavior when active*/
+
+input:hover,
+.addProjectButton:hover,
+.addCustomerButton:hover {
+  box-shadow: 0px 8px 12px 0;
 }

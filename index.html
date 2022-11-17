@@ -17,24 +17,30 @@
         <h1>R&D</h1>
         <h2>Create new project</h2>
       </div>
-
-      <div class="customerSection-container">
+      <div class="imputSection-container">
+        <!-- STR Section-->
+        <div class="form_input-container">
+          <label for="strCode">STR Code</label>
+          <input id="strCode" type="text" />
+        </div>
+        <!--Customer Section-->
         <div class="form_input-container">
           <label for="customerName">Customer</label>
-          <div class="cutomerImputAndButton-container">
-            <input id="customerName" type="text" />
+          <!--One Block for input window and add button-->
+          <div class="customerInputAndButton-container">
+            <input id="customerName" class="customerInput" type="text" />
             <button id="addNewCustomerButton" class="addCustomerButton">
               +
             </button>
           </div>
         </div>
+        <!--Project Name Section-->
+        <div class="form_input-container">
+          <label for="projectName">Project Name</label>
+          <input id="projectName" type="text" />
+        </div>
       </div>
-
-      <div class="form_input-container">
-        <label for="projectName">Project Name</label>
-        <input id="projectName" type="text" />
-      </div>
-
+      <!--Add project button-->
       <button id="addNewCustomerButton" class="addProjectButton">
         Add New Project
       </button>
