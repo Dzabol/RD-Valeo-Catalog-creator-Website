@@ -27,10 +27,25 @@
         </div>
         <!--Customer Section-->
         <div class="form_input-container">
-          <label for="customerName">Customer</label>
+          <label for="dropDown-box">Customer</label>
           <!--One Block for input window and add button-->
           <div class="customerInputAndButton-container">
-            <input id="customerName" class="customerInput" type="text" />
+            <!----------------------------------------------------------------->
+            <div class="dropDown-box">
+              <div class="dropDownSelect-button">
+                <span>Select Customer</span>
+                <div class="arrow"></div>
+              </div>
+              <div class="content">
+                <div class="search">
+                  <input class="searchInput" type="text" placeholder="Search" />
+                </div>
+                <ul class="listoOfItems">
+                  <!--populated by script-->
+                </ul>
+              </div>
+            </div>
+            <!-------------------------------------------------------------->
             <button id="addNewCustomerButton" class="addCustomerButton">
               +
             </button>
@@ -48,5 +63,6 @@
         Create new project
       </button>
     </form>
+    <script src="BACKEND/dropDownListScripts.js"></script>
   </body>
 </html>

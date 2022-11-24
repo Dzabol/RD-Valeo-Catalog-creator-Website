@@ -90,23 +90,86 @@ label {
 }
 
 /*All input containers*/
-.form_input-container {
+.form_input-container,
+.dropDownSelect-button {
   margin: 0 0 10px 0;
 }
 
 /*Customer Section*/
 .cutomerImputAndButton-container {
   margin: 0;
-  display: inline;
 }
 
 .customerInputAndButton-container {
   display: inline;
 }
 
-.customerInput {
-  width: calc(var(--inputBox-width) - var(--addNewCustomerButton-width) - 5px);
+/* ===== Drop Down List ===== */
+.dropDown-box {
+  position: relative;
+  display: inline-block;
+  text-align: left;
 }
+
+.dropDownSelect-button,
+.listoOfItems li {
+  display: flex;
+  cursor: pointer;
+}
+
+.dropDownSelect-button {
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.content {
+  display: none;
+  position: relative;
+  width: 100%;
+  background: rgb(240, 240, 240);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.dropDown-box.active .content {
+  display: block;
+}
+
+.content .listoOfItems {
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.listoOfItems li {
+  height: 50px;
+  padding: 0 13px;
+  border-radius: 20px;
+  align-items: center;
+}
+
+/*-----*/
+.listoOfItems::-webkit-scrollbar {
+  width: 7px;
+}
+
+.listoOfItems::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 100%;
+}
+
+.listoOfItems::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 100%;
+}
+
+.listoOfItems li:hover,
+.listoOfItems li.selected {
+  background: rgba(239, 241, 236, 0.3);
+}
+
+/*-----*/
 
 .addCustomerButton {
   background: white;
@@ -118,6 +181,19 @@ label {
   width: var(--addNewCustomerButton-width);
   cursor: pointer;
   font-weight: 1000;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgb(0, 0, 0);
+  transition: 0.3s linear;
+}
+
+.dropDown-box.active .arrow {
+  transform: rotate(-180deg);
 }
 
 .form_separator {
@@ -159,8 +235,10 @@ button:hover::after {
   left: 110%;
 }
 
+/*Button label and dropDown list shape */
 input,
-.addProjectButton {
+.addProjectButton,
+.dropDownSelect-button {
   background: white;
   border: none;
   border-radius: 18px;
@@ -176,19 +254,18 @@ label {
   cursor: text;
 }
 
-/*Button and label behavior when active*/
-
+/*Button label and dropDown list behavior when active*/
 input:hover,
 .addProjectButton:hover,
-.addCustomerButton:hover {
+.addCustomerButton:hover,
+.dropDownSelect-button:hover {
   box-shadow: 0px 8px 12px 0;
 }
 
 /*Define outline when active*/
 input:focus,
 .addProjectButton:focus,
-.addCustomerButton:focus {
+.addCustomerButton:focus,
+.dropDownSelect-button:focus {
   outline: solid 3px rgb(130, 230, 0);
 }
-
-/* ===== Drop Down List ===== */
